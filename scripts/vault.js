@@ -10,23 +10,6 @@ function hideSidebar() {
 
 const SEED_URL = "../seeds/seed.json";
 
-// async function renderBooks() {
-//   const main = document.querySelector("main");
-//   if (!main) return;
-
-//   try {
-//     const books = await fetchBooks();
-
-//     books.forEach((book) => {
-//       const node = createBookSection(book);
-//       main.appendChild(node);
-//     });
-//   } catch (err) {
-//     main.innerHTML =
-//       "<p>Failed to load books :(, check the console for more information.</p>";
-//   }
-// }
-
 function loadNotes() {
   const stored = localStorage.getItem("selectedBook");
 
