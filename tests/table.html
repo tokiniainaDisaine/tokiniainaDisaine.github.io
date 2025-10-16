@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Books Table</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        background: #f7f6f4;
+        margin: 0;
+        padding: 2rem;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 1.25rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
+      h1 {
+        margin: 0 0 1rem 0;
+        font-size: 1.25rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      thead th {
+        text-align: left;
+        padding: 0.75rem;
+        border-bottom: 2px solid #eee;
+        font-size: 0.95rem;
+      }
+      tbody td {
+        padding: 0.75rem;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.95rem;
+      }
+      tbody tr:hover {
+        background: #fbfbfb;
+      }
+      .muted {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .numeric {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Book Views</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th class="numeric">Views</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>rec_0001</td>
+            <td>Deep Work</td>
+            <td>Cal Newport</td>
+            <td class="numeric">1,421</td>
+          </tr>
+          <tr>
+            <td>rec_0002</td>
+            <td>JavaScript: The Good Parts</td>
+            <td>Douglas Crockford</td>
+            <td class="numeric">879</td>
+          </tr>
+          <tr>
+            <td>rec_0003</td>
+            <td>Sapiens: A Brief History of Humankind</td>
+            <td>Yuval Noah Harari</td>
+            <td class="numeric">2,054</td>
+          </tr>
+          <tr>
+            <td>rec_0004</td>
+            <td>Clean Code</td>
+            <td>Robert C. Martin</td>
+            <td class="numeric">1,640</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

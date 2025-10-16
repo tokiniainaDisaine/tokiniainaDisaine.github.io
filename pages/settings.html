@@ -1,93 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Notes & Vault</title>
-</head>
-<body>
+
+    <link rel="stylesheet" href="../styles/settings.css" />
+    <script defer src="../scripts/about.js"></script>
+  </head>
+  <body>
     <header>
-        <section class="top-section">
-            <div id="logo">
-                <img src="" alt="logo">
-                <p>Book Notes & Vault</p>
-            </div>
-            <a href="index.html"><img src="" alt="three lines"></a>
-        </section>
+      <section class="top-section">
+        <div id="logo">
+          <img src="../assets/studyvault.png" alt="logo" />
+        </div>
+        <a href="../index.html"
+          ><img src="../assets/menu.png" alt="three lines" id="three-lines"
+        /></a>
+      </section>
     </header>
+    <hr/>
 
     <main>
-        <section class="unit-section">
-            <p>Unit</p>
+      <section class="unit-section">
+        <h2>Unit</h2>
 
-            <input type="radio" id="red" name="fav_color" value="red">
-            <label for="red">Pages</label><br>
-    
-            <input type="radio" id="blue" name="fav_color" value="blue">
-            <label for="blue">Chapters</label><br>
-        </section>
+        <label class="container" id="pages">Pages
+          <input type="radio" checked="checked" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container" id="chapters">Chapters
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+      </section>
+      <hr>
 
-        <section class="ie-section">
-            <div class="ie-box" id="export-box">
-                <p>Export as JSON</p>
-                <button>Export</button>
-            </div>
+      <section class="theme-section">
+        <form class="theme-form">
+          <label for="tag-dropdown">Theme</label>
+          <select id="tag-dropdown" name="tag-dropdown">
+            <option value="option1">Light</option>
+            <option value="option2">Dark</option>
+            <option value="option3">System</option>
+          </select>
+        </form>
+      </section>
+      <hr>
 
-            <div class="ie-box" id="export-box">
-                <p>Import Data</p>
-                <button>Import</button>
-            </div>
-        </section>
+      <section class="button-section">
+        <div class="button-box" id="export-box">
+          <p>Export as JSON</p>
+          <button>Export</button>
+        </div>
+        
+        <div class="button-box" id="import-box">
+          <p>Import Data</p>
+          <button>Import</button>
+        </div>
+      </section>
+      <hr>
 
-        <section class="theme">
-            <p>Import Data</p>
-            <button>Import</button>
-        </section>
-
-        <section class="">
-            <form>
-                <label for="tag-dropdown">Tags</label>
-                <select id="tag-dropdown" name="tag-dropdown">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-            </form>
-        </section>
+      <section class="delete-section">
+        <div class="button-box">
+          <p>Delete all data</p>
+          <button>Delete</button>
+        </div>
     </main>
 
     <footer>
-        <section class="footer-section">
-            <h1>Info</h1>
-            <a href="">Formats</a>
-            <a href="">Compression</a>
-            <a href="">Pricing</a>
-            <a href="">FAQ</a>
-        </section>
-        <section class="footer-section">
-            <h1>Getting Started</h1>
-            <a href="">Introduction</a>
-            <a href="">Documentation</a>
-            <a href="">Usages</a>
-            <a href="">Elements</a>
-        </section>
-        <section class="footer-section">
-            <h1>Ressources</h1>
-            <a href="">API</a>
-            <a href="">Form Validation</a>
-            <a href="">Accessibility</a>
-            <a href="">Marketplace</a>
-        </section>
-        <section class="footer-section">
-            <h1>Newsletter</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Velit et sapiente iure repellat alias cupiditate nihil 
-                consequuntur odio consectetur.</p>
-            <a href=""><img src="" alt="facebook"></a>
-            <a href=""><img src="" alt="github"></a>
-            <a href=""><img src="" alt="linkedin"></a>
-            <a href=""><img src="" alt=""></a>
-        </section>
+      <section class="footer-section">
+        <h1>Info</h1>
+        <a href="">Formats</a>
+        <a href="">Compression</a>
+        <a href="">Pricing</a>
+        <a href="">FAQ</a>
+      </section>
+      <section class="footer-section">
+        <h1>Getting Started</h1>
+        <a href="">Introduction</a>
+        <a href="">Documentation</a>
+        <a href="">Usages</a>
+        <a href="">Elements</a>
+      </section>
+      <section class="footer-section">
+        <h1>Ressources</h1>
+        <a href="">API</a>
+        <a href="">Form Validation</a>
+        <a href="">Accessibility</a>
+        <a href="">Marketplace</a>
+      </section>
+      <section class="footer-section" id="newsletter">
+        <h1>Newsletter</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit et
+          sapiente iure repellat alias cupiditate nihil consequuntur odio
+          consectetur.
+        </p>
+        <a href=""><img src="../assets/facebook.png" alt="facebook" /></a>
+        <a href=""><img src="../assets/github.png" alt="github" /></a>
+        <a href=""><img src="../assets/linkedin.png" alt="linkedin" /></a>
+        <!-- <a href=""><img src="" alt=""></a> -->
+      </section>
     </footer>
-</body>
+  </body>
 </html>

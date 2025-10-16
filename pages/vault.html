@@ -1,102 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Notes & Vault</title>
-</head>
-<body>
+
+    <link rel="stylesheet" href="../styles/vault.css" />
+    <script src="../scripts/main.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul class="sidebar">
+        <li onclick=hideSidebar()>
+          <a href="#">
+            <img src="../assets/cross.png" alt="logo" />
+          </a>
+        </li>
+        <li>
+          <a href="pages/vault.html">
+            <!-- <img src="../assets/vault.png" alt=""> -->
+            <span>Vault</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/dashboard.html">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/settings.html">
+            <!-- <img src="../assets/settings.png" alt=""> -->
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/about.html">
+            <!-- <img src="../assets/info.png" alt=""> -->
+            <span>About</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="pages/vault.html">
+            <img src="../assets/studyvault.png" alt="logo" />
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/vault.html">
+            <!-- <img src="../assets/vault.png" alt=""> -->
+            <span>Vault</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/dashboard.html">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/settings.html">
+            <!-- <img src="../assets/settings.png" alt=""> -->
+            <span>Settings</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/about.html">
+            <!-- <img src="../assets/info.png" alt=""> -->
+            <span>About</span>
+          </a>
+        </li>
+        <li class="menu-button" onclick=showSidebar()>
+          <a href="#">
+            <img src="../assets/menu.png" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <header>
-        <section class="top-section">
-            <div id="logo">
-                <img src="" alt="logo">
-                <p>Book Notes & Vault</p>
-            </div>
-            <a href="index.html"><img src="" alt="three lines"></a>
-        </section>
-        <section class="search-section">
-            <form action="/search" method="get">
-                <input type="search" id="search-input" name="q" placeholder="Search...">
-                <button type="submit">Search</button>
-            </form>
-            <form>
-                <label for="tag-dropdown">Tags</label>
-                <select id="tag-dropdown" name="tag-dropdown">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-            </form>
-            <form>
-                <label for="sort-dropdown">sort by</label>
-                <select id="sort-dropdown" name="sort-dropdown">
-                    <option value="option1">name [A-Z]</option>
-                    <option value="option2">name [Z-A]</option>
-                    <option value="option3">date created</option>
-                </select>
-            </form>
-        </section>
-    </header>
-
-    <main>
-        <section class="new-book">
-            <button>
-                <img src="" alt="add new note">
+      <!-- <section class="top-section">
+        <div id="logo">
+          <img src="assets/studyvault.png" alt="logo" />
+        </div>
+        <a href="index.html"
+          ><img src="assets/menu.png" alt="three lines" id="three-lines"
+        /></a>
+      </section> -->
+      <section class="search-section">
+        <form action="/search" method="get" class="search-bar">
+          <div class="search">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for books, tags,..."
+            />
+            <button class="search-button">
+              <svg class="search-icon" viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                  ></path>
+                </g>
+              </svg>
             </button>
-            <p>New Notes</p>
-        </section>
+          </div>
+        </form>
+        <div class="options">
+          <form class="sort-options">
+            <label for="tag-dropdown">Tags</label>
+            <select id="tag-dropdown" name="tag-dropdown">
+              <option value="option1">Science</option>
+              <option value="option2">Math</option>
+              <option value="option3">Biology</option>
+            </select>
+          </form>
+          <form class="sort-options">
+            <label for="sort-dropdown">Sort by</label>
+            <select id="sort-dropdown" name="sort-dropdown">
+              <option value="option1">name [A-Z]</option>
+              <option value="option2">name [Z-A]</option>
+              <option value="option3">date created</option>
+            </select>
+          </form>
+        </div>
+      </section>
+    </header>
+    <hr>
+    <main>
+      <section class="new-note">
+        <button>
+          <img src="../assets/plus_dark_gray.png" alt="add new notes" />
+        </button>
+        <p>New Note</p>
+      </section>
 
-        <section class="note-section">
-            <div class="note-instance">
-                <div class="note-info">
-                    <div class="book-reference">
-                        <p class="title">Introduction to Linear Algebra</p>
-                        <p class="page">page 54</p>
-                    </div>
-                    <p class="note">"The dot product of a matrix is the sum of the columns..."</p>
-                    <ul class="note-tags">
-                        <li>Dot products</li>
-                    </ul>
-                </div>
-                <button class="more">
-                    <img src="" alt="more">
-                </button>
-            </div>
-        </section>
+      <section class="note">
+        <div class="note-info">
+          <div class="note-about">
+            <h3 class="book">Pride and Prejudice</h3>
+            <p class="page">page 322</p>
+          </div>
+          <p class="quote">
+            "You must allow me to tell you how ardently I admire and love you."
+          </p>
+        </div>
+        <button class="more">
+          <img src="../assets/more.png" alt="more" />
+        </button>
+      </section>
+
+      <section class="note">
+        <div class="note-info">
+          <div class="note-about">
+            <h3 class="book">Introduction to Linear Algebra</h3>
+            <p class="page">page 735</p>
+          </div>
+          <p class="quote">
+            "The crucial operation in Linear Algebra is to take linear
+            combinations of column vectors"
+          </p>
+        </div>
+        <button class="more">
+          <img src="../assets/more.png" alt="more" />
+        </button>
+      </section>
+
+      <section class="note">
+        <div class="note-info">
+          <div class="note-about">
+            <h3 class="book">Calculus: Early Transcendentals</h3>
+            <p class="page">page 322</p>
+          </div>
+          <p class="quote">
+            "This notation was chosen by the Swiss mathematician Leonhard Euler
+            in 1727."
+          </p>
+        </div>
+        <button class="more">
+          <img src="../assets/more.png" alt="more" />
+        </button>
+      </section>
     </main>
 
     <footer>
-        <section class="footer-section">
-            <h1>Info</h1>
-            <a href="">Formats</a>
-            <a href="">Compression</a>
-            <a href="">Pricing</a>
-            <a href="">FAQ</a>
-        </section>
-        <section class="footer-section">
-            <h1>Getting Started</h1>
-            <a href="">Introduction</a>
-            <a href="">Documentation</a>
-            <a href="">Usages</a>
-            <a href="">Elements</a>
-        </section>
-        <section class="footer-section">
-            <h1>Ressources</h1>
-            <a href="">API</a>
-            <a href="">Form Validation</a>
-            <a href="">Accessibility</a>
-            <a href="">Marketplace</a>
-        </section>
-        <section class="footer-section">
-            <h1>Newsletter</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Velit et sapiente iure repellat alias cupiditate nihil 
-                consequuntur odio consectetur.</p>
-            <a href=""><img src="" alt="facebook"></a>
-            <a href=""><img src="" alt="github"></a>
-            <a href=""><img src="" alt="linkedin"></a>
-            <a href=""><img src="" alt="x"></a>
-        </section>
+      <section class="footer-section">
+        <h1>Info</h1>
+        <a href="">Formats</a>
+        <a href="">Compression</a>
+        <a href="">Pricing</a>
+        <a href="">FAQ</a>
+      </section>
+      <section class="footer-section">
+        <h1>Getting Started</h1>
+        <a href="">Introduction</a>
+        <a href="">Documentation</a>
+        <a href="">Usages</a>
+        <a href="">Elements</a>
+      </section>
+      <section class="footer-section">
+        <h1>Ressources</h1>
+        <a href="">API</a>
+        <a href="">Form Validation</a>
+        <a href="">Accessibility</a>
+        <a href="">Marketplace</a>
+      </section>
+      <section class="footer-section" id="newsletter">
+        <h1>Newsletter</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit et
+          sapiente iure repellat alias cupiditate nihil consequuntur odio
+          consectetur.
+        </p>
+        <a href=""><img src="../assets/facebook.png" alt="facebook" /></a>
+        <a href=""><img src="../assets/github.png" alt="github" /></a>
+        <a href=""><img src="../assets/linkedin.png" alt="linkedin" /></a>
+        <!-- <a href=""><img src="" alt=""></a> -->
+      </section>
     </footer>
-</body>
+  </body>
 </html>

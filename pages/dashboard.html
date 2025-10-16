@@ -1,91 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Notes & Vault</title>
-</head>
-<body>
-    <header>
-        <section class="top-section">
-            <div id="logo">
-                <img src="" alt="logo">
-                <p>Book Notes & Vault</p>
-            </div>
-            <a href="index.html"><img src="" alt="three lines"></a>
-        </section>
-    </header>
+
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+    <script src="../scripts/main.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul class="sidebar">
+        <li onclick=hideSidebar()>
+          <a href="#">
+            <img src="../assets/cross.png" alt="logo" />
+          </a>
+        </li>
+        <li>
+          <a href="pages/vault.html">
+            <!-- <img src="../assets/vault.png" alt=""> -->
+            <span>Vault</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/dashboard.html">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/settings.html">
+            <!-- <img src="../assets/settings.png" alt=""> -->
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/about.html">
+            <!-- <img src="../assets/info.png" alt=""> -->
+            <span>About</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="pages/vault.html">
+            <img src="../assets/studyvault.png" alt="logo" />
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/vault.html">
+            <!-- <img src="../assets/vault.png" alt=""> -->
+            <span>Vault</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/dashboard.html">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/settings.html">
+            <!-- <img src="../assets/settings.png" alt=""> -->
+            <span>Settings</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/about.html">
+            <!-- <img src="../assets/info.png" alt=""> -->
+            <span>About</span>
+          </a>
+        </li>
+        <li class="menu-button" onclick=showSidebar()>
+          <a href="#">
+            <img src="../assets/menu.png" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- <header>
+      <section class="top-section">
+        <div id="logo">
+          <img src="../assets/studyvault.png" alt="logo" />
+        </div>
+        <a href="index.html"
+          ><img src="../assets/menu.png" alt="three lines" id="three-lines"
+        /></a>
+      </section>
+      <hr />
+    </header> -->
 
     <main>
-        <div class="completed">
-            <div class="total-books">
-                <img src="" alt="">
-                <div class="total-books-text">
-                    <p>Total books</p>
-                    <p>5</p>
-                </div>
+      <section class="card-container" id="completed">
+        <div class="card" id="total-books">
+          <div class="card-title">
+            <h3>Total books 📚</h3>
+          </div>
+          <div class="numbers">
+            <div class="progress-circle">
+              <svg class="progress-ring" data-progress="50" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle class="progress-ring__bg" cx="34" cy="34" r="30" fill="none" stroke="#eee" stroke-width="6"/>
+                <circle class="progress-ring__circle" cx="34" cy="34" r="30" fill="none" stroke="#4a90e2" stroke-width="6" stroke-linecap="round" transform="rotate(-90 34 34)"/>
+                <text class="progress-ring__text" x="34" y="38" text-anchor="middle" font-size="12" fill="#333">50%</text>
+              </svg>
             </div>
-            <div class="total-pages">
-                <img src="" alt="">
-                <div class="total-pages-text">
-                    <p>Total pages</p>
-                    <p>1762</p>
-                </div>
+            <div class="total-text">
+              <h2>5</h2>
             </div>
+          </div> 
         </div>
+
+        <div class="card" id="total-pages">
+          <div class="card-title">
+            <h3>Total notes 📄</h3>
+          </div>
+          <div class="numbers">
+             <div class="progress-circle">
+                <svg class="progress-ring" data-progress="88" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle class="progress-ring__bg" cx="34" cy="34" r="30" fill="none" stroke="#eee" stroke-width="6"/>
+                  <circle class="progress-ring__circle" cx="34" cy="34" r="30" fill="none" stroke="#7bc96f" stroke-width="6" stroke-linecap="round" transform="rotate(-90 34 34)"/>
+                  <text class="progress-ring__text" x="34" y="38" text-anchor="middle" font-size="12" fill="#333">88%</text>
+                </svg>
+              </div>
+            <div class="total-text">
+              <h2>176</h2>
+            </div>
+          </div> 
+        </div>
+      </section>
+
+      <section class="dashboard" id="graph">
+        <h1>Your Daily Notes</h1>
+        <div class="js-chart">
+          <canvas id="myChart"></canvas>
+          <!-- style="width:100%;height:auto;" -->
+          <script src="../scripts/chart.js"></script>
+        </div>
+      </section>
+
+      <section class="dashboard" id="json-chart">
+        <h1>Our Top Recommendations</h1>
         <div class="chart">
-            
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th class="author">Author</th>
+                <th class="numeric">Views</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0001</td>
+                <td class="title">Deep Work</td>
+                <td class="author">Cal Newport</td>
+                <td class="numeric">1,421</td>
+              </tr>
+              <tr>
+                <td>0002</td>
+                <td class="title">JavaScript: The Good Parts</td>
+                <td class="author">Douglas Crockford</td>
+                <td class="numeric">879</td>
+              </tr>
+              <tr>
+                <td>0003</td>
+                <td class="title">Sapiens: A Brief History of Humankind</td>
+                <td class="author">Yuval Noah Harari</td>
+                <td class="numeric">2,054</td>
+              </tr>
+              <tr>
+                <td>0004</td>
+                <td class="title">Clean Code</td>
+                <td class="author">Robert C. Martin</td>
+                <td class="numeric">1,640</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="target">
-            <div class="target-pages">
-                <img src="" alt="">
-                <div class="total-books-text">
-                    <p>Target pages</p>
-                    <p>2000</p>
-                </div>
-            </div>
-            <div class="remaining-pages">
-                <img src="" alt="">
-                <div class="remaining-pages-text">
-                    <p>Remaining</p>
-                    <p>238</p>
-                </div>
-            </div>
+      </section>
+
+      <section class="card-container" id="target">
+        <div class="card" id="target-pages">
+          <!-- <img src="../assets/target.png" alt="" /> -->
+          <div class="total-books-text">
+            <p>Target  notes🎯</p>
+            <h2>200</h2>
+          </div>
         </div>
+        <div class="card" id="remaining-pages">
+          <div class="remaining-pages-text">
+            <p>Remaining 🏁</p>
+            <h2>24</h2>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <section class="footer-section">
-            <h1>Info</h1>
-            <a href="">Formats</a>
-            <a href="">Compression</a>
-            <a href="">Pricing</a>
-            <a href="">FAQ</a>
-        </section>
-        <section class="footer-section">
-            <h1>Getting Started</h1>
-            <a href="">Introduction</a>
-            <a href="">Documentation</a>
-            <a href="">Usages</a>
-            <a href="">Elements</a>
-        </section>
-        <section class="footer-section">
-            <h1>Ressources</h1>
-            <a href="">API</a>
-            <a href="">Form Validation</a>
-            <a href="">Accessibility</a>
-            <a href="">Marketplace</a>
-        </section>
-        <section class="footer-section">
-            <h1>Newsletter</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Velit et sapiente iure repellat alias cupiditate nihil 
-                consequuntur odio consectetur.</p>
-            <a href=""><img src="" alt="facebook"></a>
-            <a href=""><img src="" alt="github"></a>
-            <a href=""><img src="" alt="linkedin"></a>
-            <a href=""><img src="" alt="x"></a>
-        </section>
+      <section class="footer-section">
+        <h1>Info</h1>
+        <a href="">Formats</a>
+        <a href="">Compression</a>
+        <a href="">Pricing</a>
+        <a href="">FAQ</a>
+      </section>
+      <section class="footer-section">
+        <h1>Getting Started</h1>
+        <a href="">Introduction</a>
+        <a href="">Documentation</a>
+        <a href="">Usages</a>
+        <a href="">Elements</a>
+      </section>
+      <section class="footer-section">
+        <h1>Ressources</h1>
+        <a href="">API</a>
+        <a href="">Form Validation</a>
+        <a href="">Accessibility</a>
+        <a href="">Marketplace</a>
+      </section>
+      <section class="footer-section" id="newsletter">
+        <h1>Newsletter</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit et
+          sapiente iure repellat alias cupiditate nihil consequuntur odio
+          consectetur.
+        </p>
+        <a href=""><img src="../assets/facebook.png" alt="facebook" /></a>
+        <a href=""><img src="../assets/github.png" alt="github" /></a>
+        <a href=""><img src="../assets/linkedin.png" alt="linkedin" /></a>
+        <!-- <a href=""><img src="" alt=""></a> -->
+      </section>
     </footer>
-</body>
+    <script>
+      // Initialize progress rings
+      (function () {
+        const rings = document.querySelectorAll('.progress-ring');
+        rings.forEach(svg => {
+          const circle = svg.querySelector('.progress-ring__circle');
+          const text = svg.querySelector('.progress-ring__text');
+          const r = circle.r.baseVal.value;
+          const circumference = 2 * Math.PI * r;
+          const pct = Math.max(0, Math.min(100, Number(svg.dataset.progress || 0)));
+          // set dasharray/dashoffset
+          circle.style.strokeDasharray = `${circumference}`;
+          const offset = circumference * (1 - pct / 100);
+          // trigger layout then animate
+          requestAnimationFrame(() => {
+          circle.style.strokeDashoffset = offset;
+          if (text) text.textContent = pct + '%';
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>

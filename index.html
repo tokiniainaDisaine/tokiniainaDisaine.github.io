@@ -1,156 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js"></script>
     <title>Book Notes & Vault</title>
-</head>
-<body>
-    <header>
-        <section class="top-section">
-            <div id="logo">
-                <img src="assets/studyvault.png" alt="logo">
-            </div>
-            <a href="index.html"><img src="assets/menu.png" alt="three lines" id="three-lines"></a>
-        </section>
-        <section class="search-section">
-            <form action="/search" method="get" class="search-bar">
-                <div class="search">
-                    <input type="text" class="search-input" placeholder="Search for books, tags,...">
-                    <button class="search-button">
-                        <svg class="search-icon" viewBox="0 0 24 24">
-                            <g>
-                                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                                </path>
-                            </g>
-                        </svg>
-                    </button>
-                </div>
-            </form>
-            <div class="options">
-                <form class="sort-options">
-                    <label for="tag-dropdown">Tags</label>
-                    <select id="tag-dropdown" name="tag-dropdown">
-                        <option value="option1">Science</option>
-                        <option value="option2">Math</option>
-                        <option value="option3">Biology</option>
-                    </select>
-                </form>
-                <form  class="sort-options">
-                    <label for="sort-dropdown">Sort by</label>
-                    <select id="sort-dropdown" name="sort-dropdown">
-                        <option value="option1">name [A-Z]</option>
-                        <option value="option2">name [Z-A]</option>
-                        <option value="option3">date created</option>
-                    </select>
-                </form>
-            </div>
-        </section>
-    </header>
+  </head>
+  <body>
+    <nav>
+      <ul class="sidebar">
+        <li onclick=hideSidebar()>
+          <a href="#">
+            <img src="assets/cross.png" alt="logo" />
+          </a>
+        </li>
+        <li>
+          <a href="pages/vault.html">
+            <!-- <img src="assets/vault.png" alt=""> -->
+            <span>Vault</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/dashboard.html">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/settings.html">
+            <!-- <img src="assets/settings.png" alt=""> -->
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/about.html">
+            <!-- <img src="assets/info.png" alt=""> -->
+            <span>About</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="pages/vault.html">
+            <img src="assets/studyvault.png" alt="logo" />
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/vault.html">
+            <!-- <img src="assets/vault.png" alt=""> -->
+            <span>Vault</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/dashboard.html">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/settings.html">
+            <!-- <img src="assets/settings.png" alt=""> -->
+            <span>Settings</span>
+          </a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="pages/about.html">
+            <!-- <img src="assets/info.png" alt=""> -->
+            <span>About</span>
+          </a>
+        </li>
+        <li class="menu-button" onclick=showSidebar()>
+          <a href="#">
+            <img src="assets/menu.png" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <hr>
+
+    <header>
+      <!-- <section class="top-section">
+        <div id="logo">
+          <img src="assets/studyvault.png" alt="logo" />
+        </div>
+        <a href="index.html"
+          ><img src="assets/menu.png" alt="three lines" id="three-lines"
+        /></a>
+      </section> -->
+      <section class="search-section">
+        <form action="/search" method="get" class="search-bar">
+          <div class="search">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for books, tags,..."
+            />
+            <button class="search-button">
+              <svg class="search-icon" viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="options">
+          <form class="sort-options">
+            <label for="tag-dropdown">Tags</label>
+            <select id="tag-dropdown" name="tag-dropdown">
+              <option value="option1">Science</option>
+              <option value="option2">Math</option>
+              <option value="option3">Biology</option>
+            </select>
+          </form>
+          <form class="sort-options">
+            <label for="sort-dropdown">Sort by</label>
+            <select id="sort-dropdown" name="sort-dropdown">
+              <option value="option1">name [A-Z]</option>
+              <option value="option2">name [Z-A]</option>
+              <option value="option3">date created</option>
+            </select>
+          </form>
+        </div>
+      </section>
+    </header>
+    <hr />
     <main>
-        <section class="new-book">
-            <button>
-                <img src="assets/plus_white.png" alt="add new book">
-            </button>
-            <p>New Book Vault</p>
-        </section>
+      <section class="new-book">
+        <button>
+          <img src="assets/plus_dark_gray.png" alt="add new book" />
+        </button>
+        <p>New Book Vault</p>
+      </section>
 
-        <section class="book">
-            <div class="book-info">
-                <div class="book-cover">
-                    <img src="assets/book_covers/introduction_to_linear_algebra.jpg" alt="book cover">
-                </div>
-                <div class="book-about">
-                    <h3 class="title">Introduction to Linear Algebra</h3>
-                    <h3 class="author">Gilbert Strang</h3>
-                    <p class="pages">585 pages</p>
-                    <ul class="book-tags">
-                        <li>Math</li>
-                        <li>Science</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="more">
-                <img src="assets/more.png" alt="more">
-            </button>
-        </section>
-        
-        <section class="book">
-            <div class="book-info">
-                <div class="book-cover">
-                    <img src="assets/book_covers/introduction_to_linear_algebra.jpg" alt="book cover">
-                </div>
-                <div class="book-about">
-                    <h3 class="title">Calculus: Early Transcendentals</h3>
-                    <h3 class="author">James Stewart</h3>
-                    <p class="pages">1286 pages</p>
-                    <ul class="book-tags">
-                        <li>Math</li>
-                        <li>Calculus</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="more">
-                <img src="assets/more.png" alt="more">
-            </button>
-        </section>
+      <section class="book">
+        <div class="book-info">
+          <div class="book-cover">
+            <img
+              src="assets/book_covers/introduction_to_linear_algebra.jpg"
+              alt="book cover"
+            />
+          </div>
+          <div class="book-about">
+            <h3 class="title">Introduction to Linear Algebra</h3>
+            <h3 class="author">Gilbert Strang</h3>
+            <p class="pages">585 pages</p>
+            <ul class="book-tags">
+              <li>Math</li>
+              <li>Algebra</li>
+            </ul>
+          </div>
+        </div>
+        <button class="more">
+          <img src="assets/more.png" alt="more" />
+        </button>
+      </section>
 
-        <section class="book">
-            <div class="book-info">
-                <div class="book-cover">
-                    <img src="assets/book_covers/introduction_to_linear_algebra.jpg" alt="book cover">
-                </div>
-                <div class="book-about">
-                    <h3 class="title">Pride and Prejudice</h3>
-                    <h3 class="author">Jane Austen</h3>
-                    <p class="pages">332 pages</p>
-                    <ul class="book-tags">
-                        <li>Romance</li>
-                        <li>Drama</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="more">
-                <img src="assets/more.png" alt="more">
-            </button>
-        </section>
+      <section class="book">
+        <div class="book-info">
+          <div class="book-cover">
+            <img src="assets/book_covers/calculus.jpg" alt="book cover" />
+          </div>
+          <div class="book-about">
+            <h3 class="title">Calculus: Early Transcendentals</h3>
+            <h3 class="author">James Stewart</h3>
+            <p class="pages">1286 pages</p>
+            <ul class="book-tags">
+              <li>Math</li>
+              <li>Calculus</li>
+            </ul>
+          </div>
+        </div>
+        <button class="more">
+          <img src="assets/more.png" alt="more" />
+        </button>
+      </section>
 
+      <section class="book">
+        <div class="book-info">
+          <div class="book-cover">
+            <!-- <img src="assets/book_covers/pride_and_prejudice.jpg" alt="book cover"> -->
+            <img
+              src="assets/book_covers/pride_and_prejudice_2.jpg"
+              alt="book cover"
+            />
+          </div>
+          <div class="book-about">
+            <h3 class="title">Pride and Prejudice</h3>
+            <h3 class="author">Jane Austen</h3>
+            <p class="pages">332 pages</p>
+            <ul class="book-tags">
+              <li>Romance</li>
+              <li>Drama</li>
+            </ul>
+          </div>
+        </div>
+        <button class="more">
+          <img src="assets/more.png" alt="more" />
+        </button>
+      </section>
     </main>
 
     <footer>
-        <section class="footer-section">
-            <h1>Info</h1>
-            <a href="">Formats</a>
-            <a href="">Compression</a>
-            <a href="">Pricing</a>
-            <a href="">FAQ</a>
-        </section>
-        <section class="footer-section">
-            <h1>Getting Started</h1>
-            <a href="">Introduction</a>
-            <a href="">Documentation</a>
-            <a href="">Usages</a>
-            <a href="">Elements</a>
-        </section>
-        <section class="footer-section">
-            <h1>Ressources</h1>
-            <a href="">API</a>
-            <a href="">Form Validation</a>
-            <a href="">Accessibility</a>
-            <a href="">Marketplace</a>
-        </section>
-        <section class="footer-section" id="newsletter">
-            <h1>Newsletter</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Velit et sapiente iure repellat alias cupiditate nihil 
-                consequuntur odio consectetur.</p>
-            <a href=""><img src="assets/facebook.png" alt="facebook"></a>
-            <a href=""><img src="assets/github.png" alt="github"></a>
-            <a href=""><img src="assets/linkedin.png" alt="linkedin"></a>
-            <!-- <a href=""><img src="" alt=""></a> -->
-        </section>
+      <section class="footer-section">
+        <h1>Info</h1>
+        <a href="">Formats</a>
+        <a href="">Compression</a>
+        <a href="">Pricing</a>
+        <a href="">FAQ</a>
+      </section>
+      <section class="footer-section">
+        <h1>Getting Started</h1>
+        <a href="">Introduction</a>
+        <a href="">Documentation</a>
+        <a href="">Usages</a>
+        <a href="">Elements</a>
+      </section>
+      <section class="footer-section">
+        <h1>Ressources</h1>
+        <a href="">API</a>
+        <a href="">Form Validation</a>
+        <a href="">Accessibility</a>
+        <a href="">Marketplace</a>
+      </section>
+      <section class="footer-section" id="newsletter">
+        <h1>Newsletter</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit et
+          sapiente iure repellat alias cupiditate nihil consequuntur odio
+          consectetur.
+        </p>
+        <a href=""><img src="assets/facebook.png" alt="facebook" /></a>
+        <a href=""><img src="assets/github.png" alt="github" /></a>
+        <a href=""><img src="assets/linkedin.png" alt="linkedin" /></a>
+        <!-- <a href=""><img src="" alt=""></a> -->
+      </section>
     </footer>
-</body>
+  </body>
 </html>
