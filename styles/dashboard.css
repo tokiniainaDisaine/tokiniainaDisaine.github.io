@@ -52,7 +52,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #f0f0f0f0;
+  background-color: #f0f0f0;
 }
 
 nav li:first-child {
@@ -151,6 +151,7 @@ nav li:first-child {
 
 main {
   padding: 1rem;
+  background: #f7f6f4;
 
   .card-container {
     display: flex;

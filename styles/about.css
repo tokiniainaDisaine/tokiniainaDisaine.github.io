@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -16,20 +18,108 @@ body {
   margin: 0%;
   padding: 0%;
 
-  /* background-color: #f0efeb; */
   background: #f7f6f4;
 
   font-family: Arial, Helvetica, sans-serif;
 }
 
+nav {
+  background-color: white;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1);
+}
+
+nav img {
+  height: 25px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  list-style: none;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  padding: 0 30px;
+
+  text-decoration: none;
+  color: #000000;
+}
+
+nav a:hover {
+  background-color: #f0f0f0;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start ;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.322);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.sidebar li {
+  width: 100%;
+  height: 4rem;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+.sidebar span {
+  font-size: 2rem;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
 header {
-  /* position: sticky; */
   position: fixed;
   top: 0;
   width: 100%;
-  transition: top 0.3s; 
+  transition: top 0.3s;
   display: block;
-
 
   padding: 1rem 1rem 0 0rem;
 
@@ -74,7 +164,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     max-width: 100%;
     width: 100%;
     height: 100vh;
@@ -84,13 +174,14 @@ main {
     text-align: center;
     line-height: 1.4;
   }
-  
+
   .purpose {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/photos/book.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../assets/photos/book.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -106,17 +197,18 @@ main {
     font-size: 1.5rem;
     text-align: center;
   }
-  
+
   .vision {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/photos/book_2.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../assets/photos/book_2.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    
+
     color: #fff;
   }
 
@@ -139,7 +231,7 @@ main {
   .quote p {
     font-size: 1.5rem;
     text-align: center;
-    margin: .5rem;
+    margin: 0.5rem;
   }
 
   .quote .special-text {

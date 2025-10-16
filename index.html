@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+    <!-- <script src="tests/fetch_json.js"></script> -->
     <script src="scripts/main.js"></script>
     <title>Book Notes & Vault</title>
   </head>
   <body>
     <nav>
       <ul class="sidebar">
-        <li onclick=hideSidebar()>
+        <li onclick="hideSidebar()">
           <a href="#">
             <img src="assets/cross.png" alt="logo" />
           </a>
@@ -69,25 +70,17 @@
             <span>About</span>
           </a>
         </li>
-        <li class="menu-button" onclick=showSidebar()>
+        <li class="menu-button" onclick="showSidebar()">
           <a href="#">
-            <img src="assets/menu.png" alt="">
+            <img src="assets/menu.png" alt="" />
           </a>
         </li>
       </ul>
     </nav>
 
-    <hr>
+    <hr />
 
     <header>
-      <!-- <section class="top-section">
-        <div id="logo">
-          <img src="assets/studyvault.png" alt="logo" />
-        </div>
-        <a href="index.html"
-          ><img src="assets/menu.png" alt="three lines" id="three-lines"
-        /></a>
-      </section> -->
       <section class="search-section">
         <form action="/search" method="get" class="search-bar">
           <div class="search">
@@ -130,78 +123,59 @@
     <hr />
     <main>
       <section class="new-book">
-        <button>
+        <button onclick="showAddSection()">
           <img src="assets/plus_dark_gray.png" alt="add new book" />
         </button>
         <p>New Book Vault</p>
       </section>
 
-      <section class="book">
-        <div class="book-info">
-          <div class="book-cover">
-            <img
-              src="assets/book_covers/introduction_to_linear_algebra.jpg"
-              alt="book cover"
-            />
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel">
+        <header class="modal-header">
+          <h2>Create a new book</h2>
+        </header>
+        <form id="new-book-form" class="modal-form">
+          <label
+            >Title<input
+              type="text"
+              name="title"
+              pattern="[A-Za-z0-9 ]+"
+              title="The title must not contain special characters"
+              required
+              /></label>
+              <label>
+                Author<input 
+                type="text" 
+                name="author" 
+                pattern="[A-Za-z ]+"
+                title="The title should only contain alphabetic characters"
+              /></label>
+          <label
+            >Pages<input 
+              name="pages" 
+              type="number" 
+              min="1"  
+          /></label>
+          <label>
+            Tag<input 
+              type="text" 
+              name="tag"
+              pattern="\b(\w+)\s+\1\b"
+              title="The tag should not contain repeating characters" 
+          /></label>
+          <div class="modal-actions">
+            <button type="submit" class="btn primary">Create</button>
+            <button
+              onclick="hideAddSection()"
+              type="button"
+              class="btn"
+              data-close
+            >
+              Cancel
+            </button>
           </div>
-          <div class="book-about">
-            <h3 class="title">Introduction to Linear Algebra</h3>
-            <h3 class="author">Gilbert Strang</h3>
-            <p class="pages">585 pages</p>
-            <ul class="book-tags">
-              <li>Math</li>
-              <li>Algebra</li>
-            </ul>
-          </div>
-        </div>
-        <button class="more">
-          <img src="assets/more.png" alt="more" />
-        </button>
-      </section>
-
-      <section class="book">
-        <div class="book-info">
-          <div class="book-cover">
-            <img src="assets/book_covers/calculus.jpg" alt="book cover" />
-          </div>
-          <div class="book-about">
-            <h3 class="title">Calculus: Early Transcendentals</h3>
-            <h3 class="author">James Stewart</h3>
-            <p class="pages">1286 pages</p>
-            <ul class="book-tags">
-              <li>Math</li>
-              <li>Calculus</li>
-            </ul>
-          </div>
-        </div>
-        <button class="more">
-          <img src="assets/more.png" alt="more" />
-        </button>
-      </section>
-
-      <section class="book">
-        <div class="book-info">
-          <div class="book-cover">
-            <!-- <img src="assets/book_covers/pride_and_prejudice.jpg" alt="book cover"> -->
-            <img
-              src="assets/book_covers/pride_and_prejudice_2.jpg"
-              alt="book cover"
-            />
-          </div>
-          <div class="book-about">
-            <h3 class="title">Pride and Prejudice</h3>
-            <h3 class="author">Jane Austen</h3>
-            <p class="pages">332 pages</p>
-            <ul class="book-tags">
-              <li>Romance</li>
-              <li>Drama</li>
-            </ul>
-          </div>
-        </div>
-        <button class="more">
-          <img src="assets/more.png" alt="more" />
-        </button>
-      </section>
+        </form>
+      </div>
     </main>
 
     <footer>
@@ -236,7 +210,6 @@
         <a href=""><img src="assets/facebook.png" alt="facebook" /></a>
         <a href=""><img src="assets/github.png" alt="github" /></a>
         <a href=""><img src="assets/linkedin.png" alt="linkedin" /></a>
-        <!-- <a href=""><img src="" alt=""></a> -->
       </section>
     </footer>
   </body>

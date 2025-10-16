@@ -48,7 +48,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #f0f0f0f0;
+  background-color: #f0f0f0;
 }
 
 nav li:first-child {
@@ -59,7 +59,7 @@ nav li:first-child {
   display: none;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start ;
+  align-items: flex-start;
 
   position: fixed;
   top: 0;
@@ -111,7 +111,9 @@ header {
 
   padding: 1rem;
 
-  background-color: #fff1e6;
+  /* background-color: #fff1e6; */
+  background: #fff;
+
 
   .top-section {
     display: flex;
@@ -258,6 +260,8 @@ hr {
 }
 
 main {
+  background: #f7f6f4;
+
   .new-note {
     display: flex;
     flex-direction: column;
@@ -325,8 +329,9 @@ main {
     /* border: 1px solid #EDDCD2; */
     border-radius: 20px;
 
-    background-color: #f0efeb;
-    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+    /* background-color: #f0efeb; */
+    background: #fff;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1);
   }
 
   .note-about {
@@ -406,6 +411,14 @@ main {
     width: 3rem;
     height: 3rem;
   }
+}
+
+main h1 {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
 }
 
 footer {
